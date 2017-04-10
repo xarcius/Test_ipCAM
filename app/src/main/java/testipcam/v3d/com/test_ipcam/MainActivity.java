@@ -2,6 +2,7 @@ package testipcam.v3d.com.test_ipcam;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.provider.MediaStore;
@@ -27,7 +28,7 @@ import android.net.Uri;
 import android.widget.MediaController;
 import android.widget.VideoView;
 
-
+/*
 public class MainActivity extends AppCompatActivity implements MediaPlayer.OnPreparedListener, SurfaceHolder.Callback {
 
     final static String USERNAME = "admin";
@@ -102,4 +103,26 @@ public class MainActivity extends AppCompatActivity implements MediaPlayer.OnPre
     }
 
 }
+*/
+
+public class MainActivity extends AppCompatActivity{
+
+
+    WebView browser;
+
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_REVERSE_LANDSCAPE);
+
+        WebView browser = (WebView) findViewById(R.id.id_browser);
+
+        browser.loadUrl("http://192.168.1.5:8080");
+
+    }
+
+
+}
+
 
